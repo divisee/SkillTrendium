@@ -32,6 +32,21 @@
 
 ---
 
+## Демо-отчёты
+
+Примеры реальных отчётов, сгенерированных SkillTrendium (открываются в браузере):
+
+| Запрос | Отчёт |
+|--------|-------|
+| ML Engineer | [Открыть](https://divisee.github.io/SkillTrendium/demo/SkillTrendium_ML_Engineer.html) |
+| ML | [Открыть](https://divisee.github.io/SkillTrendium/demo/SkillTrendium_ML.html) |
+| AI-архитектор | [Открыть](https://divisee.github.io/SkillTrendium/demo/SkillTrendium_AIархитектор.html) |
+| Менеджер проекта | [Открыть](https://divisee.github.io/SkillTrendium/demo/SkillTrendium_Менеджер_проекта.html) |
+| 1С | [Открыть](https://divisee.github.io/SkillTrendium/demo/SkillTrendium_1с.html) |
+| LLM-разработчик | [Открыть](https://divisee.github.io/SkillTrendium/demo/SkillTrendium_LLM_разработчик.html) |
+
+---
+
 ## Как это работает
 
 Пайплайн реализован в **n8n** и состоит из 10 этапов:
