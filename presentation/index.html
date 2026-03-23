@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SkillTrendium — Презентация</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:#0f172a}
+body{font-family:'Space Grotesk','Inter',system-ui,sans-serif;color:#1e293b}
+
+.slide{display:none;width:100vw;height:100vh;padding:50px 70px;background:linear-gradient(160deg,#f8fafc 0%,#eef2ff 40%,#e0e7ff 100%);position:relative;overflow:auto}
+.slide.active{display:flex;flex-direction:column;justify-content:flex-start}
+
+.slide.title{justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 30%,#4338ca 70%,#6366f1 100%);color:#e0e7ff}
+.slide.title::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(99,102,241,0.3) 0%,transparent 50%),radial-gradient(ellipse at 70% 30%,rgba(6,182,212,0.2) 0%,transparent 40%);pointer-events:none}
+.slide.title h1{font-family:'Raleway',sans-serif;font-size:3.4em;font-weight:900;color:#fff;text-shadow:0 2px 20px rgba(99,102,241,0.5);position:relative;z-index:1;letter-spacing:-0.02em;margin-bottom:16px}
+.slide.title p{font-size:1.2em;color:#c7d2fe;position:relative;z-index:1;margin:4px 0}
+.slide.title strong{color:#a5b4fc}
+.slide.title em{color:#94a3b8;font-style:normal}
+
+.slide.problem{border-left:6px solid #ef4444}
+.slide.problem h2{color:#dc2626!important;border-bottom-color:#ef4444!important}
+.slide.solution{border-left:6px solid #22c55e}
+.slide.solution h2{color:#16a34a!important;border-bottom-color:#22c55e!important}
+.slide.tech{border-left:6px solid #3b82f6}
+.slide.tech h2{color:#2563eb!important;border-bottom-color:#3b82f6!important}
+.slide.money{border-left:6px solid #f59e0b}
+.slide.money h2{color:#b45309!important;border-bottom-color:#f59e0b!important}
+
+.slide.screenshot{padding:0;justify-content:stretch;align-items:stretch;background:#0f172a}
+.slide.screenshot img{width:100%;height:100%;object-fit:contain}
+.slide.screenshot .badge{position:absolute;bottom:0;left:0;background:rgba(30,27,75,0.85);backdrop-filter:blur(8px);color:#e0e7ff;font-family:'Raleway',sans-serif;font-weight:700;font-size:0.9em;padding:10px 26px;border-radius:0 14px 0 0;z-index:2}
+
+h1{font-family:'Raleway',sans-serif;color:#312e81;font-size:2.2em;font-weight:800;margin-bottom:12px;letter-spacing:-0.02em}
+h2{font-family:'Raleway',sans-serif;color:#4338ca;font-size:1.55em;font-weight:700;border-bottom:3px solid #6366f1;padding-bottom:8px;margin-bottom:16px;letter-spacing:-0.01em}
+h3{font-family:'Raleway',sans-serif;color:#5b21b6;font-size:1.15em;font-weight:700;margin:12px 0 8px}
+strong{color:#3730a3}
+em{color:#64748b}
+a{color:#2563eb}
+
+table{font-size:0.82em;border-radius:8px;overflow:hidden;border-collapse:collapse;margin:10px 0;width:auto}
+th{background:linear-gradient(135deg,#4338ca,#6366f1);color:white;padding:10px 14px;font-weight:600;font-family:'Raleway',sans-serif;letter-spacing:0.02em;text-align:left}
+td{background:rgba(255,255,255,0.7);padding:9px 14px;border:1px solid #c7d2fe;color:#1e293b}
+
+pre{background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:10px;padding:16px 20px;font-size:0.72em;line-height:1.5;overflow-x:auto;margin:10px 0;font-family:'Space Grotesk',monospace;white-space:pre}
+code{background:rgba(99,102,241,0.1);color:#4338ca;padding:2px 8px;border-radius:6px;font-size:0.9em}
+pre code{background:none;padding:0}
+
+ul,ol{line-height:1.8;padding-left:24px}
+li{margin-bottom:4px}
+p{margin:6px 0;line-height:1.7}
+
+blockquote{background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(6,182,212,0.08));border-left:4px solid #6366f1;border-radius:0 12px 12px 0;padding:14px 20px;margin:12px 0;font-size:0.95em}
+blockquote p{margin:0}
+
+.nav{position:fixed;bottom:20px;right:24px;z-index:100;display:flex;gap:8px;align-items:center}
+.nav button{background:rgba(99,102,241,0.9);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:0.9em;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:background 0.2s}
+.nav button:hover{background:#4f46e5}
+.nav span{color:#94a3b8;font-size:0.85em;font-family:'Space Grotesk',sans-serif;min-width:60px;text-align:center}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<section class="slide title" data-slide="1">
+<h1>SkillTrendium</h1>
+<p><strong>AI-помощник для анализа трендов навыков на рынке труда</strong></p>
+<p><em>Вакансии HeadHunter + Tavily + LLM = аналитический отчёт за минуты</em></p>
+</section>
+
+<!-- Slide 2: About -->
+<section class="slide" data-slide="2">
+<h2>О проекте</h2>
+<p><strong>Тип:</strong> Инструмент аналитики рынка труда</p>
+<p><strong>Статус:</strong> MVP</p>
+<blockquote><p><strong>Что делает:</strong> Собирает вакансии с HH, извлекает навыки через LLM, ищет тренды через Tavily, генерирует HTML-отчёт с графиками и отправляет на почту.</p></blockquote>
+<p><strong>Для кого:</strong></p>
+<ul>
+<li><strong>Соискатели</strong> — понять, что учить для смены направления</li>
+<li><strong>HR-команды</strong> — анализ рынка за минуты вместо часов</li>
+<li><strong>Образовательные платформы</strong> — актуализация программ</li>
+<li><strong>Карьерные консультанты</strong> — данные для рекомендаций</li>
+</ul>
+</section>
+
+<!-- Slide 3: Team -->
+<section class="slide" data-slide="3">
+<h2>Команда</h2>
+<table>
+<thead><tr><th>Имя</th><th>Роль</th></tr></thead>
+<tbody><tr><td>Распутина Анастасия</td><td>Разработка, архитектура, ML</td></tr></tbody>
+</table>
+<p style="margin-top:20px"><strong>Репозиторий:</strong> <a href="https://github.com/divisee/SkillTrendium" target="_blank">GitHub — SkillTrendium</a></p>
+</section>
+
+<!-- Slide 4: Problem B2C -->
+<section class="slide problem" data-slide="4">
+<h2>Проблема: соискатель</h2>
+<p><strong>Что происходит сейчас:</strong></p>
+<ul>
+<li><strong>4-6 часов</strong> на ручной анализ рынка при смене направления</li>
+<li>Повторяется <strong>1-2 раза в месяц</strong> в активном поиске</li>
+<li>Нерелевантные вакансии → неэффективное обучение → редкие офферы</li>
+</ul>
+<p><strong>Стоимость ручного анализа:</strong><br><strong>4 000 — 12 000 rub</strong> на одного пользователя в месяц</p>
+<blockquote><p><strong>С SkillTrendium:</strong> Сокращение до <strong>20-30 минут</strong> → экономия значимой части времени и денег</p></blockquote>
+</section>
+
+<!-- Slide 5: Problem B2B -->
+<section class="slide problem" data-slide="5">
+<h2>Проблема: B2B</h2>
+<p><strong>HR-команды, рекрутинговые агентства, образовательные платформы:</strong></p>
+<ul>
+<li><strong>50-200 вакансий</strong> анализируются для одного обзора рынка</li>
+<li><strong>6-12 часов</strong> работы аналитика на один отчёт</li>
+<li>Задача возникает <strong>2-4 раза в месяц</strong></li>
+</ul>
+<p><strong>Стоимость ручной аналитики:</strong><br><strong>18 000 — 144 000 rub</strong> в месяц на одну команду</p>
+<blockquote><p><strong>Результат без автоматизации:</strong> Решения на основе неполных или устаревших данных</p></blockquote>
+</section>
+
+<!-- Slide 6: Solution -->
+<section class="slide solution" data-slide="6">
+<h2>Решение</h2>
+<p><strong>SkillTrendium</strong> — полный цикл аналитики:</p>
+<ol>
+<li>Пользователь вводит вакансию и период</li>
+<li>LLM генерирует ключевые слова</li>
+<li>HH API собирает вакансии</li>
+<li>LLM извлекает технологии (батчами)</li>
+<li>LLM анализирует тренды</li>
+<li><strong>Tavily</strong> ищет веб-тренды</li>
+<li>LLM формирует сводный анализ</li>
+<li>HTML-отчёт с графиками</li>
+<li><strong>Отправка отчёта на e-mail</strong></li>
+</ol>
+</section>
+
+<!-- Slide 7: Tech Stack -->
+<section class="slide tech" data-slide="7">
+<h2>Технический подход</h2>
+<table>
+<thead><tr><th>Компонент</th><th>Технология</th></tr></thead>
+<tbody>
+<tr><td>Оркестрация</td><td><strong>n8n</strong> — low-code автоматизация</td></tr>
+<tr><td>LLM</td><td><strong>Gemma 3 27B IT</strong> — открытая модель Google</td></tr>
+<tr><td>Инференс</td><td><strong>vLLM</strong> — высокопроизводительный сервер</td></tr>
+<tr><td>Вакансии</td><td><strong>HH API</strong> — открытый API HeadHunter</td></tr>
+<tr><td>Веб-тренды</td><td><strong>Tavily</strong> — AI-поисковый API</td></tr>
+<tr><td>Доставка</td><td><strong>E-mail</strong> — отправка отчёта на почту</td></tr>
+<tr><td>Обработка</td><td><strong>Батчи по N</strong> — оптимизация LLM-вызовов</td></tr>
+<tr><td>Отчёт</td><td><strong>HTML + SVG-графики</strong> + Excel XML</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- Slide 8: Architecture Diagram -->
+<section class="slide tech" data-slide="8">
+<h2>Схема: ключевые технологии</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│                        ПОЛЬЗОВАТЕЛЬ                             │
+│                    (форма ввода запроса)                         │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                     n8n  ·  Оркестрация                         │
+│  ┌──────────┐   ┌──────────────┐   ┌─────────────────────────┐  │
+│  │  HH API  │──▶│  Gemma 3 27B │──▶│  Tavily Search API      │  │
+│  │ вакансии │   │   (vLLM)     │   │  веб-тренды             │  │
+│  └──────────┘   │  извлечение  │   └─────────────────────────┘  │
+│                 │  технологий  │                                 │
+│                 │  + анализ    │                                 │
+│                 └──────────────┘                                 │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│              HTML-отчёт (SVG-графики) + Excel XML               │
+│                  скачивание / e-mail                             │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+</section>
+
+<!-- Slide 9: User Scenario -->
+<section class="slide tech" data-slide="9">
+<h2>Пользовательский сценарий</h2>
+<pre><code>Пользователь                           Система
+     |                                    |
+     |  "Data Engineer", 14 дней          |
+     |----------------------------------->|
+     |                                    |  LLM --> 20 ключевых слов
+     |                                    |  HH API --> 250 вакансий
+     |                                    |  LLM --> технологии (25 батчей)
+     |                                    |  LLM --> анализ трендов
+     |                                    |  Tavily --> веб-тренды
+     |                                    |  LLM --> сводный анализ
+     |                                    |  SVG-графики + HTML-отчёт
+     |        Скачать + письмо на почту   |
+     |<-----------------------------------|</code></pre>
+</section>
+
+<!-- Slide 10: Financials -->
+<section class="slide money" data-slide="10">
+<h2>Финансовая оценка</h2>
+<h3>Для соискателя</h3>
+<table>
+<thead><tr><th>Параметр</th><th>Ручной анализ</th><th>С SkillTrendium</th></tr></thead>
+<tbody>
+<tr><td>Время</td><td>4-6 часов</td><td>20-30 минут</td></tr>
+<tr><td>Стоимость/мес</td><td>4 000 — 12 000 rub</td><td>~0 rub</td></tr>
+</tbody>
+</table>
+<h3>Для B2B (одна HR-команда)</h3>
+<table>
+<thead><tr><th>Параметр</th><th>Ручной анализ</th><th>С SkillTrendium</th></tr></thead>
+<tbody>
+<tr><td>Время на отчёт</td><td>6-12 часов</td><td>~30 минут</td></tr>
+<tr><td>Стоимость/мес</td><td>18 000 — 144 000 rub</td><td>Инфраструктура</td></tr>
+<tr><td><strong>Экономия/мес</strong></td><td></td><td><strong>50 000 — 80 000 rub</strong></td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- Slide 11: Costs -->
+<section class="slide money" data-slide="11">
+<h2>Стоимость и окупаемость</h2>
+<table>
+<thead><tr><th>Раздел</th><th>Сумма</th></tr></thead>
+<tbody>
+<tr><td>Разработка (разово)</td><td>~0 rub (open-source стек)</td></tr>
+<tr><td>Cloud GPU A100 40/80GB (в месяц)</td><td>100 000 — 150 000 rub</td></tr>
+<tr><td>n8n хостинг (в месяц)</td><td>0 rub (self-hosted)</td></tr>
+<tr><td>Tavily API (в месяц)</td><td>0 rub (1 000 запросов бесплатно)</td></tr>
+<tr><td>Поддержка (в месяц)</td><td>Минимальная</td></tr>
+</tbody>
+</table>
+<blockquote><p>GPU-инфраструктура тиражируется на другие AI-решения компании — затраты на каждый проект <strong>существенно ниже</strong>.</p></blockquote>
+<h3>ROI (на примере одной HR-команды)</h3>
+<ul>
+<li><strong>Экономия:</strong> 50 000 — 80 000 rub/мес (замена ручного анализа)</li>
+<li><strong>Затраты GPU (доля проекта при 5 решениях):</strong> ~25 000 rub/мес</li>
+<li><strong>ROI = (экономия − затраты) / затраты = 100–220%</strong></li>
+<li><strong>Срок окупаемости:</strong> 1–2 месяца</li>
+</ul>
+<p><strong>Альтернатива:</strong> Проприетарные LLM (GPT, Perplexity) — без GPU, оплата за токены</p>
+</section>
+
+<!-- Slide 12: Security -->
+<section class="slide" data-slide="12">
+<h2>Безопасность и ограничения</h2>
+<p><strong>Конфиденциальность:</strong><br>Анализируются только открытые данные — публичные вакансии с hh.ru. Персональные данные не обрабатываются.</p>
+<p><strong>Основные риски:</strong></p>
+<table>
+<thead><tr><th>Риск</th><th>Митигация</th></tr></thead>
+<tbody>
+<tr><td>Изменение HH API</td><td>Мониторинг, адаптация запросов</td></tr>
+<tr><td>LLM галлюцинации</td><td>Structured JSON output, валидация</td></tr>
+<tr><td>Rate-limit HH API (30 req/s)</td><td>Последовательная обработка, лимит</td></tr>
+</tbody>
+</table>
+<blockquote><p><strong>LLM:</strong> Локальная (Gemma, Qwen на vLLM) или проприетарная (GPT) — конфиденциальная информация отсутствует</p></blockquote>
+</section>
+
+<!-- Slide 13: Status -->
+<section class="slide solution" data-slide="13">
+<h2>Текущий статус и демо</h2>
+<p><strong>Что готово:</strong></p>
+<ul>
+<li>n8n пайплайн — полный цикл из <strong>9 этапов</strong> (включая e-mail)</li>
+<li>Форма ввода с кастомным дизайном</li>
+<li>Интеграция с HH API, LLM, Tavily и e-mail</li>
+<li>HTML-отчёт с SVG-графиками и AI-аналитикой</li>
+<li><strong>Автоматическая отправка отчёта на почту</strong></li>
+</ul>
+<p><strong>Демо:</strong></p>
+<ul>
+<li>Работа пайплайна в n8n</li>
+<li>Пример отчёта по реальному запросу</li>
+<li>Форма ввода и отправка на почту</li>
+</ul>
+</section>
+
+<!-- Slide 14-19: Screenshots -->
+<section class="slide screenshot" data-slide="14">
+<img src="source/main_form.jpg" alt="Форма ввода">
+<div class="badge">Форма ввода</div>
+</section>
+
+<section class="slide screenshot" data-slide="15">
+<img src="source/n8n_pipe.jpg" alt="Пайплайн n8n">
+<div class="badge">Пайплайн n8n</div>
+</section>
+
+<section class="slide screenshot" data-slide="16">
+<img src="source/report1.jpg" alt="Отчёт: графики технологий">
+<div class="badge">Отчёт: графики технологий</div>
+</section>
+
+<section class="slide screenshot" data-slide="17">
+<img src="source/report2.jpg" alt="Отчёт: аналитика и тренды">
+<div class="badge">Отчёт: аналитика и тренды</div>
+</section>
+
+<section class="slide screenshot" data-slide="18">
+<img src="source/report3.jpg" alt="Отчёт: детальная статистика">
+<div class="badge">Отчёт: детальная статистика</div>
+</section>
+
+<section class="slide screenshot" data-slide="19">
+<img src="source/example_email.jpg" alt="Отправка на e-mail">
+<div class="badge">Отправка на e-mail</div>
+</section>
+
+<!-- Slide 20: Thank you -->
+<section class="slide title" data-slide="20">
+<h1>Спасибо!</h1>
+<p><strong>SkillTrendium</strong> — данные вместо догадок</p>
+<p><em>Вопросы?</em></p>
+</section>
+
+<div class="nav">
+<button onclick="prev()">&#8592;</button>
+<span id="counter">1 / 20</span>
+<button onclick="next()">&#8594;</button>
+</div>
+
+<script>
+var current=1,total=document.querySelectorAll('.slide').length;
+function show(n){
+  if(n<1)n=1;if(n>total)n=total;current=n;
+  document.querySelectorAll('.slide').forEach(function(s){s.classList.remove('active')});
+  document.querySelector('[data-slide="'+n+'"]').classList.add('active');
+  document.getElementById('counter').textContent=n+' / '+total;
+}
+function next(){show(current+1)}
+function prev(){show(current-1)}
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight'||e.key===' ')next();
+  if(e.key==='ArrowLeft')prev();
+});
+show(1);
+</script>
+</body>
+</html>
