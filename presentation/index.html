@@ -85,63 +85,40 @@ blockquote p{margin:0}
 <li><strong>Образовательные платформы</strong> — актуализация программ</li>
 <li><strong>Карьерные консультанты</strong> — данные для рекомендаций</li>
 </ul>
-</section>
-
-<!-- Slide 3: Team -->
-<section class="slide" data-slide="3">
-<h2>Команда</h2>
+<h3 style="margin-top:20px">Команда</h3>
 <table>
 <thead><tr><th>Имя</th><th>Роль</th></tr></thead>
 <tbody><tr><td>Распутина Анастасия</td><td>Разработка, архитектура, ML</td></tr></tbody>
 </table>
-<p style="margin-top:20px"><strong>Репозиторий:</strong> <a href="https://github.com/divisee/SkillTrendium" target="_blank">GitHub — SkillTrendium</a></p>
+<p style="margin-top:10px"><strong>Репозиторий:</strong> <a href="https://github.com/divisee/SkillTrendium" target="_blank">GitHub — SkillTrendium</a></p>
 </section>
 
-<!-- Slide 4: Problem B2C -->
-<section class="slide problem" data-slide="4">
-<h2>Проблема: соискатель</h2>
-<p><strong>Что происходит сейчас:</strong></p>
-<ul>
-<li><strong>4-6 часов</strong> на ручной анализ рынка при смене направления</li>
-<li>Повторяется <strong>1-2 раза в месяц</strong> в активном поиске</li>
-<li>Нерелевантные вакансии → неэффективное обучение → редкие офферы</li>
-</ul>
-<p><strong>Стоимость ручного анализа:</strong><br><strong>4 000 — 12 000 rub</strong> на одного пользователя в месяц</p>
-<blockquote><p><strong>С SkillTrendium:</strong> Сокращение до <strong>20-30 минут</strong> → экономия значимой части времени и денег</p></blockquote>
-</section>
-
-<!-- Slide 5: Problem B2B -->
-<section class="slide problem" data-slide="5">
-<h2>Проблема: B2B</h2>
-<p><strong>HR-команды, рекрутинговые агентства, образовательные платформы:</strong></p>
-<ul>
-<li><strong>50-200 вакансий</strong> анализируются для одного обзора рынка</li>
-<li><strong>6-12 часов</strong> работы аналитика на один отчёт</li>
-<li>Задача возникает <strong>2-4 раза в месяц</strong></li>
-</ul>
-<p><strong>Стоимость ручной аналитики:</strong><br><strong>18 000 — 144 000 rub</strong> в месяц на одну команду</p>
-<blockquote><p><strong>Результат без автоматизации:</strong> Решения на основе неполных или устаревших данных</p></blockquote>
-</section>
-
-<!-- Slide 6: Solution -->
-<section class="slide solution" data-slide="6">
-<h2>Решение</h2>
-<p><strong>SkillTrendium</strong> — полный цикл аналитики:</p>
-<ol>
-<li>Пользователь вводит вакансию и период</li>
+<!-- Slide 3: Problem + Solution -->
+<section class="slide problem" data-slide="3">
+<h2>Проблема и решение</h2>
+<div class="two-col">
+<div>
+<h3>Проблема</h3>
+<p style="margin-bottom:4px"><strong>Соискатель:</strong> 4-6 часов на анализ рынка, 4 000 — 12 000 rub/мес</p>
+<p><strong>B2B:</strong> 6-12 часов на отчёт, 18 000 — 144 000 rub/мес</p>
+</div>
+<div>
+<h3>Решение: SkillTrendium</h3>
+<ol style="font-size:0.9em;line-height:1.6">
+<li>Ввод вакансии и периода</li>
 <li>LLM генерирует ключевые слова</li>
 <li>HH API собирает вакансии</li>
 <li>LLM извлекает технологии (батчами)</li>
-<li>LLM анализирует тренды</li>
-<li><strong>Tavily</strong> ищет веб-тренды</li>
-<li>LLM формирует сводный анализ</li>
-<li>HTML-отчёт с графиками</li>
-<li><strong>Отправка отчёта на e-mail</strong></li>
+<li>LLM + Tavily анализируют тренды</li>
+<li>HTML-отчёт + отправка на e-mail</li>
 </ol>
+</div>
+</div>
+<blockquote><p><strong>Результат:</strong> 20-30 минут вместо часов. До 2 000 вакансий за один запуск.</p></blockquote>
 </section>
 
-<!-- Slide 7: Tech Stack -->
-<section class="slide tech" data-slide="7">
+<!-- Slide 4: Tech Stack -->
+<section class="slide tech" data-slide="4">
 <h2>Технический подход</h2>
 <table>
 <thead><tr><th>Компонент</th><th>Технология</th></tr></thead>
@@ -159,7 +136,7 @@ blockquote p{margin:0}
 </section>
 
 <!-- Slide 8: Architecture Diagram -->
-<section class="slide tech" data-slide="8">
+<section class="slide tech" data-slide="5">
 <h2>Схема: ключевые технологии</h2>
 <pre><code>┌─────────────────────────────────────────────────────────────────┐
 │                        ПОЛЬЗОВАТЕЛЬ                             │
@@ -186,7 +163,7 @@ blockquote p{margin:0}
 </section>
 
 <!-- Slide 9: User Scenario -->
-<section class="slide tech" data-slide="9">
+<section class="slide tech" data-slide="6">
 <h2>Пользовательский сценарий</h2>
 <pre><code>Пользователь                           Система
      |                                    |
@@ -204,7 +181,7 @@ blockquote p{margin:0}
 </section>
 
 <!-- Slide 10: Financials -->
-<section class="slide money" data-slide="10">
+<section class="slide money" data-slide="7">
 <h2>Финансовая оценка</h2>
 <h3>Для соискателя</h3>
 <table>
@@ -226,7 +203,7 @@ blockquote p{margin:0}
 </section>
 
 <!-- Slide 11: Costs -->
-<section class="slide money" data-slide="11">
+<section class="slide money" data-slide="8">
 <h2>Стоимость и окупаемость</h2>
 <table>
 <thead><tr><th>Раздел</th><th>Сумма</th></tr></thead>
@@ -250,7 +227,7 @@ blockquote p{margin:0}
 </section>
 
 <!-- Slide 12: Security -->
-<section class="slide" data-slide="12">
+<section class="slide" data-slide="9">
 <h2>Безопасность и ограничения</h2>
 <p><strong>Конфиденциальность:</strong><br>Анализируются только открытые данные — публичные вакансии с hh.ru. Персональные данные не обрабатываются.</p>
 <p><strong>Основные риски:</strong></p>
@@ -266,7 +243,7 @@ blockquote p{margin:0}
 </section>
 
 <!-- Slide 13: Status -->
-<section class="slide solution" data-slide="13">
+<section class="slide solution" data-slide="10">
 <h2>Текущий статус и демо</h2>
 <p><strong>Что готово:</strong></p>
 <ul>
@@ -285,38 +262,38 @@ blockquote p{margin:0}
 </section>
 
 <!-- Slide 14-19: Screenshots -->
-<section class="slide screenshot" data-slide="14">
+<section class="slide screenshot" data-slide="11">
 <img src="source/main_form.jpg" alt="Форма ввода">
 <div class="badge">Форма ввода</div>
 </section>
 
-<section class="slide screenshot" data-slide="15">
+<section class="slide screenshot" data-slide="12">
 <img src="source/n8n_pipe.jpg" alt="Пайплайн n8n">
 <div class="badge">Пайплайн n8n</div>
 </section>
 
-<section class="slide screenshot" data-slide="16">
+<section class="slide screenshot" data-slide="13">
 <img src="source/report1.jpg" alt="Отчёт: графики технологий">
 <div class="badge">Отчёт: графики технологий</div>
 </section>
 
-<section class="slide screenshot" data-slide="17">
+<section class="slide screenshot" data-slide="14">
 <img src="source/report2.jpg" alt="Отчёт: аналитика и тренды">
 <div class="badge">Отчёт: аналитика и тренды</div>
 </section>
 
-<section class="slide screenshot" data-slide="18">
+<section class="slide screenshot" data-slide="15">
 <img src="source/report3.jpg" alt="Отчёт: детальная статистика">
 <div class="badge">Отчёт: детальная статистика</div>
 </section>
 
-<section class="slide screenshot" data-slide="19">
+<section class="slide screenshot" data-slide="16">
 <img src="source/example_email.jpg" alt="Отправка на e-mail">
 <div class="badge">Отправка на e-mail</div>
 </section>
 
 <!-- Slide 20: Thank you -->
-<section class="slide title" data-slide="20">
+<section class="slide title" data-slide="17">
 <h1>Спасибо!</h1>
 <p><strong>SkillTrendium</strong> — данные вместо догадок</p>
 <p><em>Вопросы?</em></p>
@@ -324,7 +301,7 @@ blockquote p{margin:0}
 
 <div class="nav">
 <button onclick="prev()">&#8592;</button>
-<span id="counter">1 / 20</span>
+<span id="counter">1 / 17</span>
 <button onclick="next()">&#8594;</button>
 </div>
 
